@@ -87,12 +87,13 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []tos.Question {
 
 func (dao QuestionImpl) GetAnswerById(ID int64) string {
 
-	db := connection()
+	db, conn := connectaws()
 
 	utility.GetLogger()
 	log.Println("entering in GetAnswerById() ")
 
 	defer db.Close()
+	defer conn.Close()
 	//defer conn.Close()
 	answer := ""
 	log.Println("executing query and fetching answers ")

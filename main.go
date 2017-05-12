@@ -31,7 +31,7 @@ func main() {
 	router.POST("/addquestions", webservice.AddQuestions)
 
 	router.GET("/logout", webservice.Logout)
-	//router.GET("/mockadmin", webservice.MockAdmin)
+	router.GET("/mockadmin", webservice.MockAdmin)
 
 	router.Run(GetPort())
 
@@ -42,7 +42,7 @@ func GetPort() string {
 
 	if port == "" {
 		port = "7082"
-		port = "8087"
+		port = "8084"
 		fmt.Println("INFO: No PORT environment variable detected, defaulting to " + port)
 	}
 	return ":" + port
