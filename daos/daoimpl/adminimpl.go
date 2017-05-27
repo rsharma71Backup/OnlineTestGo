@@ -19,7 +19,7 @@ func (dao AdminImpl) FetchData() []tos.Admin {
 
 	log.Println("executing query and Fetching data from db ")
 
-	query := " select a.uid,r.fname,r.lname,a.testtype,a.score from onlinetestdb.answers a, onlinetestdb.registration r where r.id=a.uid"
+	query := " select a.uid,r.fname,r.lname,a.testtype,a.score from answers a, registration r where r.id=a.uid"
 
 	db, conn := connectaws()
 	defer db.Close()
