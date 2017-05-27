@@ -14819,3 +14819,273 @@ TRACE: 2017/05/12 10:55:45 CalculateScore.go:23: calling Answer manager
 TRACE: 2017/05/12 10:55:45 CalculateScore.go:30: answerList [{0 42 } {0 41 } {0 37 } {0 43 } {0 36 } {0 40 } {0 39 } {0 38 }]
 TRACE: 2017/05/12 10:55:45 CalculateScore.go:33: calling questionDao.GetAnswerById() and Fetching the right answer...
 TRACE: 2017/05/12 10:55:45 CalculateScore.go:36: 263409560461970212832400
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] GET    /mockadmin                --> OnlineTestGo/webservice.MockAdmin (3 handlers)
+TRACE: 2017/05/27 14:45:58 debug.go:45: [GIN-debug] Listening and serving HTTP on :8084
+TRACE: 2017/05/27 14:46:55 Login.go:14: entering webservice.Login()
+TRACE: 2017/05/27 14:46:55 Login.go:19: calling manager.Login()
+TRACE: 2017/05/27 14:46:55 Login.go:20: {0    test@t.com 123 }
+TRACE: 2017/05/27 14:46:55 Login.go:16: entering manager.login
+TRACE: 2017/05/27 14:46:55 Login.go:22: calling userDao.AuthenticateUser()
+TRACE: 2017/05/27 14:46:55 userimpl.go:84: entering in AuthenticateUser()
+TRACE: 2017/05/27 14:46:55 userimpl.go:86: Executing query and authenticating user exist
+TRACE: 2017/05/27 14:47:00 userimpl.go:109: Response user Obj :  {1 test test 2245235444   user}
+TRACE: 2017/05/27 14:47:00 Login.go:26: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/05/27 14:47:00 Login.go:32: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/05/27 14:47:02 loginimpl.go:80: entering In DeleteDuplicateUid()
+TRACE: 2017/05/27 14:47:02 loginimpl.go:81: executing query.....
+TRACE: 2017/05/27 14:47:05 loginimpl.go:93: {0xc0421a2ee0 0xc0421d07d0}
+TRACE: 2017/05/27 14:47:05 loginimpl.go:98: 0 <nil>
+TRACE: 2017/05/27 14:47:05 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/05/27 14:47:05 loginimpl.go:16: exntering in SaveToken() function {0 1 GJlcSSSqZwtykejGeiOL 2017-05-27 14:47:00.1629938 +0530 IST}
+TRACE: 2017/05/27 14:47:05 loginimpl.go:17: executing query and storing token in database for the user 
+TRACE: 2017/05/27 14:47:07 loginimpl.go:20: token inserted
+TRACE: 2017/05/27 14:47:07 loginimpl.go:21: {0 1 GJlcSSSqZwtykejGeiOL 2017-05-27 14:47:00.1629938 +0530 IST}
+TRACE: 2017/05/27 14:47:09 loginimpl.go:33: {0xc04229c310 0xc0422929d0}
+TRACE: 2017/05/27 14:47:09 Login.go:48: {1 test GJlcSSSqZwtykejGeiOL user}
+TRACE: 2017/05/27 14:47:17 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/05/27 14:47:17 QuestionList.go:18: java
+TRACE: 2017/05/27 14:47:17 QuestionList.go:19: GJlcSSSqZwtykejGeiOL
+TRACE: 2017/05/27 14:47:17 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/05/27 14:47:17 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/05/27 14:47:17 aunthenticate.go:24: 6 0 0
+TRACE: 2017/05/27 14:47:17 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/05/27 14:47:20 authenticatetokenimpl.go:47: GJlcSSSqZwtykejGeiOL
+TRACE: 2017/05/27 14:47:20 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/05/27 14:47:20 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/05/27 14:47:22 authenticatetokenimpl.go:51: GJlcSSSqZwtykejGeiOL
+TRACE: 2017/05/27 14:47:22 authenticatetokenimpl.go:59: Type is GJlcSSSqZwtykejGeiOL
+TRACE: 2017/05/27 14:47:22 aunthenticate.go:42: 2017-05-27 14:47:22
+TRACE: 2017/05/27 14:47:22 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/05/27 14:47:25 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/05/27 14:47:25 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/05/27 14:47:27 authenticatetokenimpl.go:30: {0xc04232c000 0xc0421d0c70}
+TRACE: 2017/05/27 14:47:27 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/05/27 14:47:27 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/05/27 14:47:27 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/05/27 14:47:27 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/05/27 14:47:27 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/05/27 14:47:27 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/05/27 14:47:27 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/05/27 14:47:29 questionimpl.go:28: &{0xae5660 onlinetestuser:Rpqb_123@mysql+tcp(127.0.0.1:3306)/onlinetestdb 0 {0 0} [] [] 0 0xc0421d9b00 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/05/27 14:47:32 questionimpl.go:30: &{0xc0421d2bd0 0x7193a0 0xc042311380 false [] <nil> 0xc0421cee70}
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] GET    /mockadmin                --> OnlineTestGo/webservice.MockAdmin (3 handlers)
+TRACE: 2017/05/27 15:01:11 debug.go:45: [GIN-debug] Listening and serving HTTP on :8084
+TRACE: 2017/05/27 15:01:33 Logout.go:14: entering webservice.Logout()
+TRACE: 2017/05/27 15:01:33 Logout.go:16: calling manager.DeleteTokenLogin()
+TRACE: 2017/05/27 15:01:33 Logout.go:12: entering manager.DeleteToken()
+TRACE: 2017/05/27 15:01:33 Logout.go:15: calling logoutdao.DeleteToken()
+TRACE: 2017/05/27 15:01:33 logoutimpl.go:13: exntering in DeleteToken() function
+TRACE: 2017/05/27 15:01:33 logoutimpl.go:15: executing query and deleting token from database 
+TRACE: 2017/05/27 15:01:38 logoutimpl.go:27: 
+TRACE: 2017/05/27 15:01:38 logoutimpl.go:37: 0
+TRACE: 2017/05/27 15:02:15 Login.go:14: entering webservice.Login()
+TRACE: 2017/05/27 15:02:15 Login.go:19: calling manager.Login()
+TRACE: 2017/05/27 15:02:15 Login.go:20: {0    test@mailinator.com test@123 }
+TRACE: 2017/05/27 15:02:15 Login.go:16: entering manager.login
+TRACE: 2017/05/27 15:02:15 Login.go:22: calling userDao.AuthenticateUser()
+TRACE: 2017/05/27 15:02:15 userimpl.go:84: entering in AuthenticateUser()
+TRACE: 2017/05/27 15:02:15 userimpl.go:86: Executing query and authenticating user exist
+TRACE: 2017/05/27 15:02:20 userimpl.go:109: Response user Obj :  {222 test test 7653729837   user}
+TRACE: 2017/05/27 15:02:20 Login.go:26: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/05/27 15:02:20 Login.go:32: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/05/27 15:02:22 loginimpl.go:80: entering In DeleteDuplicateUid()
+TRACE: 2017/05/27 15:02:22 loginimpl.go:81: executing query.....
+TRACE: 2017/05/27 15:02:25 loginimpl.go:93: {0xc042322000 0xc042004f10}
+TRACE: 2017/05/27 15:02:25 loginimpl.go:98: 0 <nil>
+TRACE: 2017/05/27 15:02:25 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/05/27 15:02:25 loginimpl.go:16: exntering in SaveToken() function {0 222 ljyFYMwVhSlAdYAlVPMb 2017-05-27 15:02:20.2883955 +0530 IST}
+TRACE: 2017/05/27 15:02:25 loginimpl.go:17: executing query and storing token in database for the user 
+TRACE: 2017/05/27 15:02:28 loginimpl.go:20: token inserted
+TRACE: 2017/05/27 15:02:28 loginimpl.go:21: {0 222 ljyFYMwVhSlAdYAlVPMb 2017-05-27 15:02:20.2883955 +0530 IST}
+TRACE: 2017/05/27 15:02:30 loginimpl.go:33: {0xc042322150 0xc0422ca460}
+TRACE: 2017/05/27 15:02:30 Login.go:48: {222 test ljyFYMwVhSlAdYAlVPMb user}
+TRACE: 2017/05/27 15:02:37 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/05/27 15:02:37 QuestionList.go:18: java
+TRACE: 2017/05/27 15:02:37 QuestionList.go:19: ljyFYMwVhSlAdYAlVPMb
+TRACE: 2017/05/27 15:02:37 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/05/27 15:02:37 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/05/27 15:02:37 aunthenticate.go:24: 6 0 0
+TRACE: 2017/05/27 15:02:37 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/05/27 15:02:40 authenticatetokenimpl.go:47: ljyFYMwVhSlAdYAlVPMb
+TRACE: 2017/05/27 15:02:40 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/05/27 15:02:40 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/05/27 15:02:42 authenticatetokenimpl.go:51: ljyFYMwVhSlAdYAlVPMb
+TRACE: 2017/05/27 15:02:42 authenticatetokenimpl.go:59: Type is ljyFYMwVhSlAdYAlVPMb
+TRACE: 2017/05/27 15:02:42 aunthenticate.go:42: 2017-05-27 15:02:42
+TRACE: 2017/05/27 15:02:42 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/05/27 15:02:44 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/05/27 15:02:44 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/05/27 15:02:47 authenticatetokenimpl.go:30: {0xc04202ef50 0xc042005c90}
+TRACE: 2017/05/27 15:02:47 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/05/27 15:02:47 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/05/27 15:02:47 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/05/27 15:02:47 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/05/27 15:02:47 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/05/27 15:02:47 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/05/27 15:02:47 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/05/27 15:02:49 questionimpl.go:28: &{0xae5660 onlinetestdb_produser:Rpqb_987@mysql+tcp(127.0.0.1:3306)/onlinetestdb_prod 0 {0 0} [] [] 0 0xc0421eb140 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/05/27 15:02:51 questionimpl.go:30: <nil>
+TRACE: 2017/05/27 15:02:51 questionimpl.go:32: Error 1142: SELECT command denied to user 'onlinetestdb_produser'@'localhost' for table 'questions'
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] GET    /mockadmin                --> OnlineTestGo/webservice.MockAdmin (3 handlers)
+TRACE: 2017/05/27 15:04:55 debug.go:45: [GIN-debug] Listening and serving HTTP on :8084
+TRACE: 2017/05/27 15:05:18 Logout.go:14: entering webservice.Logout()
+TRACE: 2017/05/27 15:05:18 Logout.go:16: calling manager.DeleteTokenLogin()
+TRACE: 2017/05/27 15:05:18 Logout.go:12: entering manager.DeleteToken()
+TRACE: 2017/05/27 15:05:18 Logout.go:15: calling logoutdao.DeleteToken()
+TRACE: 2017/05/27 15:05:18 logoutimpl.go:13: exntering in DeleteToken() function
+TRACE: 2017/05/27 15:05:18 logoutimpl.go:15: executing query and deleting token from database 
+TRACE: 2017/05/27 15:05:23 logoutimpl.go:27: 
+TRACE: 2017/05/27 15:05:24 logoutimpl.go:37: 0
+TRACE: 2017/05/27 15:05:59 Login.go:14: entering webservice.Login()
+TRACE: 2017/05/27 15:05:59 Login.go:19: calling manager.Login()
+TRACE: 2017/05/27 15:05:59 Login.go:20: {0    test@mailinator.com test@123 }
+TRACE: 2017/05/27 15:05:59 Login.go:16: entering manager.login
+TRACE: 2017/05/27 15:05:59 Login.go:22: calling userDao.AuthenticateUser()
+TRACE: 2017/05/27 15:05:59 userimpl.go:84: entering in AuthenticateUser()
+TRACE: 2017/05/27 15:05:59 userimpl.go:86: Executing query and authenticating user exist
+TRACE: 2017/05/27 15:06:04 userimpl.go:109: Response user Obj :  {222 test test 7653729837   user}
+TRACE: 2017/05/27 15:06:04 Login.go:26: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/05/27 15:06:04 Login.go:32: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/05/27 15:06:07 loginimpl.go:80: entering In DeleteDuplicateUid()
+TRACE: 2017/05/27 15:06:07 loginimpl.go:81: executing query.....
+TRACE: 2017/05/27 15:06:09 loginimpl.go:93: {0xc0421bac40 0xc0421e04d0}
+TRACE: 2017/05/27 15:06:09 loginimpl.go:98: 0 <nil>
+TRACE: 2017/05/27 15:06:09 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/05/27 15:06:09 loginimpl.go:16: exntering in SaveToken() function {0 222 GQIrysILirFSozrtCIVX 2017-05-27 15:06:04.4451349 +0530 IST}
+TRACE: 2017/05/27 15:06:09 loginimpl.go:17: executing query and storing token in database for the user 
+TRACE: 2017/05/27 15:06:11 loginimpl.go:20: token inserted
+TRACE: 2017/05/27 15:06:11 loginimpl.go:21: {0 222 GQIrysILirFSozrtCIVX 2017-05-27 15:06:04.4451349 +0530 IST}
+TRACE: 2017/05/27 15:06:14 loginimpl.go:33: {0xc04202e9a0 0xc042005270}
+TRACE: 2017/05/27 15:06:14 Login.go:48: {222 test GQIrysILirFSozrtCIVX user}
+TRACE: 2017/05/27 15:06:32 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/05/27 15:06:32 QuestionList.go:18: java
+TRACE: 2017/05/27 15:06:32 QuestionList.go:19: GQIrysILirFSozrtCIVX
+TRACE: 2017/05/27 15:06:32 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/05/27 15:06:32 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/05/27 15:06:32 aunthenticate.go:24: 6 0 0
+TRACE: 2017/05/27 15:06:32 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/05/27 15:06:35 authenticatetokenimpl.go:47: GQIrysILirFSozrtCIVX
+TRACE: 2017/05/27 15:06:35 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/05/27 15:06:35 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/05/27 15:06:37 authenticatetokenimpl.go:51: GQIrysILirFSozrtCIVX
+TRACE: 2017/05/27 15:06:37 authenticatetokenimpl.go:59: Type is GQIrysILirFSozrtCIVX
+TRACE: 2017/05/27 15:06:37 aunthenticate.go:42: 2017-05-27 15:06:37
+TRACE: 2017/05/27 15:06:37 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/05/27 15:06:39 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/05/27 15:06:39 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/05/27 15:06:41 authenticatetokenimpl.go:30: {0xc0422da460 0xc0422a67c0}
+TRACE: 2017/05/27 15:06:41 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/05/27 15:06:41 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/05/27 15:06:41 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/05/27 15:06:41 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/05/27 15:06:41 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/05/27 15:06:41 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/05/27 15:06:41 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/05/27 15:06:44 questionimpl.go:28: &{0xae5660 onlinetestdb_produser:Rpqb_987@mysql+tcp(127.0.0.1:3306)/onlinetestdb_prod 0 {0 0} [] [] 0 0xc0422ff1a0 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/05/27 15:06:46 questionimpl.go:30: <nil>
+TRACE: 2017/05/27 15:06:46 questionimpl.go:32: Error 1142: SELECT command denied to user 'onlinetestdb_produser'@'localhost' for table 'questions'
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] GET    /testService              --> OnlineTestGo/webservice.TestService (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] POST   /registerUser             --> OnlineTestGo/webservice.RegisterUser (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] POST   /login                    --> OnlineTestGo/webservice.Login (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] GET    /questions                --> OnlineTestGo/webservice.QuestionList (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] POST   /userAnswer               --> OnlineTestGo/webservice.AnswerList (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] GET    /admin                    --> OnlineTestGo/webservice.Admin (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] POST   /addquestions             --> OnlineTestGo/webservice.AddQuestions (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] GET    /logout                   --> OnlineTestGo/webservice.Logout (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] GET    /mockadmin                --> OnlineTestGo/webservice.MockAdmin (3 handlers)
+TRACE: 2017/05/27 15:11:06 debug.go:45: [GIN-debug] Listening and serving HTTP on :8084
+TRACE: 2017/05/27 15:11:20 Logout.go:14: entering webservice.Logout()
+TRACE: 2017/05/27 15:11:20 Logout.go:16: calling manager.DeleteTokenLogin()
+TRACE: 2017/05/27 15:11:20 Logout.go:12: entering manager.DeleteToken()
+TRACE: 2017/05/27 15:11:20 Logout.go:15: calling logoutdao.DeleteToken()
+TRACE: 2017/05/27 15:11:20 logoutimpl.go:13: exntering in DeleteToken() function
+TRACE: 2017/05/27 15:11:20 logoutimpl.go:15: executing query and deleting token from database 
+TRACE: 2017/05/27 15:11:25 logoutimpl.go:27: 
+TRACE: 2017/05/27 15:11:25 logoutimpl.go:37: 0
+TRACE: 2017/05/27 15:11:39 Login.go:14: entering webservice.Login()
+TRACE: 2017/05/27 15:11:39 Login.go:19: calling manager.Login()
+TRACE: 2017/05/27 15:11:39 Login.go:20: {0    test@mailinator.com test@123 }
+TRACE: 2017/05/27 15:11:39 Login.go:16: entering manager.login
+TRACE: 2017/05/27 15:11:39 Login.go:22: calling userDao.AuthenticateUser()
+TRACE: 2017/05/27 15:11:39 userimpl.go:84: entering in AuthenticateUser()
+TRACE: 2017/05/27 15:11:39 userimpl.go:86: Executing query and authenticating user exist
+TRACE: 2017/05/27 15:11:44 userimpl.go:109: Response user Obj :  {222 test test 7653729837   user}
+TRACE: 2017/05/27 15:11:44 Login.go:26: generates token if user exist by calling GenerateToken()  
+TRACE: 2017/05/27 15:11:44 Login.go:32: calling tokenDao.DeleteDuplicateUid()
+TRACE: 2017/05/27 15:11:47 loginimpl.go:80: entering In DeleteDuplicateUid()
+TRACE: 2017/05/27 15:11:47 loginimpl.go:81: executing query.....
+TRACE: 2017/05/27 15:11:49 loginimpl.go:93: {0xc0422165b0 0xc042004c10}
+TRACE: 2017/05/27 15:11:49 loginimpl.go:98: 0 <nil>
+TRACE: 2017/05/27 15:11:49 Login.go:34: calling tokenDao.SaveToken()
+TRACE: 2017/05/27 15:11:49 loginimpl.go:16: exntering in SaveToken() function {0 222 TfyYaKRyplxRwReneFhD 2017-05-27 15:11:44.7521349 +0530 IST}
+TRACE: 2017/05/27 15:11:49 loginimpl.go:17: executing query and storing token in database for the user 
+TRACE: 2017/05/27 15:11:51 loginimpl.go:20: token inserted
+TRACE: 2017/05/27 15:11:51 loginimpl.go:21: {0 222 TfyYaKRyplxRwReneFhD 2017-05-27 15:11:44.7521349 +0530 IST}
+TRACE: 2017/05/27 15:11:54 loginimpl.go:33: {0xc042216850 0xc042005110}
+TRACE: 2017/05/27 15:11:54 Login.go:48: {222 test TfyYaKRyplxRwReneFhD user}
+TRACE: 2017/05/27 15:12:01 QuestionList.go:15: entering into manager.QuestionList()
+TRACE: 2017/05/27 15:12:01 QuestionList.go:18: java
+TRACE: 2017/05/27 15:12:01 QuestionList.go:19: TfyYaKRyplxRwReneFhD
+TRACE: 2017/05/27 15:12:01 QuestionList.go:20: calling filter.AuntheticateToken()
+TRACE: 2017/05/27 15:12:01 aunthenticate.go:13: entering into AuthenticateToken()
+TRACE: 2017/05/27 15:12:01 aunthenticate.go:24: 6 0 0
+TRACE: 2017/05/27 15:12:01 aunthenticate.go:34: calling  daoimpl tokenDao.AunthenticateToken()
+TRACE: 2017/05/27 15:12:04 authenticatetokenimpl.go:47: TfyYaKRyplxRwReneFhD
+TRACE: 2017/05/27 15:12:04 authenticatetokenimpl.go:48: entering in AunthenticateToken() function
+TRACE: 2017/05/27 15:12:04 authenticatetokenimpl.go:49: executing query fetching and returning token,lastaccesstime
+TRACE: 2017/05/27 15:12:06 authenticatetokenimpl.go:51: TfyYaKRyplxRwReneFhD
+TRACE: 2017/05/27 15:12:06 authenticatetokenimpl.go:59: Type is TfyYaKRyplxRwReneFhD
+TRACE: 2017/05/27 15:12:06 aunthenticate.go:42: 2017-05-27 15:12:06
+TRACE: 2017/05/27 15:12:06 aunthenticate.go:54: calling ModifyLastAccessTime()
+TRACE: 2017/05/27 15:12:08 authenticatetokenimpl.go:17: entering In ModifyLastAccessTime()
+TRACE: 2017/05/27 15:12:08 authenticatetokenimpl.go:18: executing query updating lastaccesstime to currentime
+TRACE: 2017/05/27 15:12:11 authenticatetokenimpl.go:30: {0xc0421cb180 0xc0422ecd90}
+TRACE: 2017/05/27 15:12:11 authenticatetokenimpl.go:35: 0 <nil>
+TRACE: 2017/05/27 15:12:11 QuestionList.go:24: calling manager.FetchQuestion()
+TRACE: 2017/05/27 15:12:11 FetchQuestion.go:13: entering into manager.FetchQuestion
+TRACE: 2017/05/27 15:12:11 FetchQuestion.go:15: calling Question manager
+TRACE: 2017/05/27 15:12:11 FetchQuestion.go:19: calling FetchQuestionsByType()
+TRACE: 2017/05/27 15:12:11 questionimpl.go:20: entering into FetchQuestionsByType()
+TRACE: 2017/05/27 15:12:11 questionimpl.go:21: executing query and Fetching Questions By Type 
+TRACE: 2017/05/27 15:12:13 questionimpl.go:28: &{0xae5660 onlinetestdb_produser:Rpqb_987@mysql+tcp(127.0.0.1:3306)/onlinetestdb_prod 0 {0 0} [] [] 0 0xc0421ef140 false map[] map[] 0 0 0 <nil>}
+TRACE: 2017/05/27 15:12:16 questionimpl.go:30: &{0xc04231a4d0 0x7193a0 0xc042037820 false [] <nil> 0xc042318660}

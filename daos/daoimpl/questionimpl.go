@@ -20,7 +20,7 @@ func (dao QuestionImpl) FetchQuestionsByType(testtype string) []tos.Question {
 	log.Println("entering into FetchQuestionsByType()")
 	log.Println("executing query and Fetching Questions By Type ")
 
-	query := "SELECT A.id, A.question, B.choices FROM onlinetestdb.questions as A right join onlinetestdb.Options as B on A.id = B.qid where type = ?"
+	query := "SELECT A.id, A.question, B.choices FROM questions as A right join Options as B on A.id = B.qid where type = ?"
 
 	db, conn := connectaws()
 	defer db.Close()
@@ -97,7 +97,7 @@ func (dao QuestionImpl) GetAnswerById(ID int64) string {
 	//defer conn.Close()
 	answer := ""
 	log.Println("executing query and fetching answers ")
-	err := db.QueryRow("select answers from onlinetestdb.Options where answers != '0' && qid=?", ID).Scan(&answer)
+	err := db.QueryRow("select answers from Options where answers != '0' && qid=?", ID).Scan(&answer)
 
 	switch {
 	case err == sql.ErrNoRows:
