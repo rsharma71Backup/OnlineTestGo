@@ -16,7 +16,7 @@ func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeStrin
 	utility.GetLogger()
 	log.Println("entering In ModifyLastAccessTime()")
 	log.Println("executing query updating lastaccesstime to currentime")
-	query := "update  token set lastaccesstime=? where token=? "
+	query := "UPDATE token set lastaccesstime=? where token=? "
 
 	stmt, err := db.Prepare(query)
 
