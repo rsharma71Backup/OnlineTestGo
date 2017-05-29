@@ -1,8 +1,8 @@
 ---
 applications:
-- name: OnlineTestGo
+- name: onlinetestgo
   memory: 320M
   instances: 1
-  host: ${random-word
+  host: rapidquest
   path: .
 buildpack: https://github.com/cloudfoundry/go-buildpack
