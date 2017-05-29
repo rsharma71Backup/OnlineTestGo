@@ -9,7 +9,7 @@ type AnswerImpl struct{}
 
 func (dao AnswerImpl) SaveAnswer(answer models.Answer) (int64, error) {
 
-	query := "insert into Answers(uid,q_type,score) values (?,?,?)"
+	query := "INSERT into Answers(uid,q_type,score) values (?,?,?)"
 
 	db := connection()
 	defer db.Close()
