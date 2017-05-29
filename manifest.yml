@@ -6,4 +6,4 @@ applications:
   instances: 1
   host: ${random-word}
   path: .
-buildpack: https://github.com/michaljemala/cloudfoundry-buildpack-go
+buildpack: https://github.com/cloudfoundry/go-buildpack
