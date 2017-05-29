@@ -1,0 +1,9 @@
+---
+applications:
+- name: OnlineTestGo
+  memory: 320M
+  domain: mybluemix.net
+  instances: 1
+  host: ${random-word}
+  path: .
+buildpack: https://github.com/michaljemala/cloudfoundry-buildpack-go
