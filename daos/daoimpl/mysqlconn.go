@@ -24,12 +24,12 @@ func connectaws() (*sql.DB, *ssh.Client) {
 
 	sshHost := "ec2-54-218-55-72.us-west-2.compute.amazonaws.com" // SSH Server Hostname/IP
 	sshPort := 22                                                 // SSH Port
-	sshUser := "vikram"                                           // SSH Username
+	sshUser := "risabh"                                           // SSH Username
 	sshPass := "rpqb123"                                          // Empty string for no password
-	dbUser := "onlinetestdb_produser"                             // DB username
-	dbPass := "Rpqb_987"                                          // DB Password
+	dbUser := "onlinetestuser"                             // DB username
+	dbPass := "Rpqb_123"                                          // DB Password
 	dbHost := "127.0.0.1:3306"                                    // DB Hostname/IP
-	dbName := "onlinetestdb_prod"                                 // Database name
+	dbName := "onlinetestdb"                                 // Database name
 
 	var agentClient agent.Agent
 	// Establish a connection to the local ssh-agent
