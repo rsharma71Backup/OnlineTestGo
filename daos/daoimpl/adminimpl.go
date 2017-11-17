@@ -21,10 +21,8 @@ func (dao AdminImpl) FetchData() []tos.Admin {
 
 	query := " select a.uid,r.fname,r.lname,a.testtype,a.score from answers a, registration r where r.id=a.uid"
 
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
-
 	rows, err := db.Query(query)
 
 	if err != nil {

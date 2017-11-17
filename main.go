@@ -33,6 +33,9 @@ func main() {
 	router.GET("/logout", webservice.Logout)
 	router.GET("/mockadmin", webservice.MockAdmin)
 
+	router.POST("/adminaddquestions", webservice.AdminAddQuestions)
+	router.GET("/fetchquestions", webservice.FetchQuestions)
+
 	router.Run(GetPort())
 
 }

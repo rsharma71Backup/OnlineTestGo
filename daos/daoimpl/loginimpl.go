@@ -16,12 +16,11 @@ func (dao LoginImpl) SaveToken(token models.Token) (int, error) {
 	log.Println("exntering in SaveToken() function", token)
 	log.Println("executing query and storing token in database for the user ")
 	query := "insert into token(uid,token,lastaccesstime) values (?,?,?)"
-	db, conn := connectaws()
+	db := connection()
 	log.Println("token inserted")
 	log.Println(token)
 
 	defer db.Close()
-	defer conn.Close()
 	stmt, err := db.Prepare(query)
 	if err != nil {
 		return 0, err
@@ -45,9 +44,8 @@ func (dao LoginImpl) SaveToken(token models.Token) (int, error) {
 }
 
 func (dao LoginImpl) ModifyToken(token string, uid int) error {
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 	utility.GetLogger()
 	log.Println("entering In ModifyToken()")
 	log.Println("executing query updating currenttoken to newtoken")
@@ -73,9 +71,8 @@ func (dao LoginImpl) ModifyToken(token string, uid int) error {
 }
 
 func (dao LoginImpl) DeleteDuplicateUid(token models.Token) error {
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 	utility.GetLogger()
 	log.Println("entering In DeleteDuplicateUid()")
 	log.Println("executing query.....")
@@ -102,9 +99,8 @@ func (dao LoginImpl) DeleteDuplicateUid(token models.Token) error {
 func (dao LoginImpl) GetToken(uid int64, fname string, token string, lastaccestime time.Time) (int64, error) {
 	query := "select  uid, token, lastaccesstime from token where  id= ?"
 
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 
 	rows, err := db.Query(query, token)
 	if err != nil {

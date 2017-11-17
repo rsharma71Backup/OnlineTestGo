@@ -23,10 +23,10 @@ func AddQuestions(c *gin.Context) {
 		var question models.Question
 
 		c.BindJSON(&question)
-
 		log.Println("calling manager.AddQuestion()")
 
 		insertedid := manager.AddQuestion(question)
+
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.Header("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
 		c.JSON(200, gin.H{

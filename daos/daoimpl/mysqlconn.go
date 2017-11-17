@@ -26,10 +26,10 @@ func connectaws() (*sql.DB, *ssh.Client) {
 	sshPort := 22                                                 // SSH Port
 	sshUser := "risabh"                                           // SSH Username
 	sshPass := "rpqb123"                                          // Empty string for no password
-	dbUser := "onlinetestuser"                             // DB username
+	dbUser := "onlinetestuser"                                    // DB username
 	dbPass := "Rpqb_123"                                          // DB Password
 	dbHost := "127.0.0.1:3306"                                    // DB Hostname/IP
-	dbName := "onlinetestdb"                                 // Database name
+	dbName := "onlinetestdb"                                      // Database name
 
 	var agentClient agent.Agent
 	// Establish a connection to the local ssh-agent
@@ -83,7 +83,7 @@ func connectaws() (*sql.DB, *ssh.Client) {
 
 func connection() *sql.DB {
 	db, err := sql.Open("mysql",
-		"onlinetestuser:Rpqb_123@tcp(127.0.0.1:3306)/onlinetestdb")
+		"root:root@tcp(127.0.0.1:3306)/onlinetestdb")
 	if err != nil {
 		log.Fatal(err)
 	}

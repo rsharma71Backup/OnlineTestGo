@@ -24,5 +24,4 @@ func RegisterUser(c *gin.Context) {
 		"status":  "success",
 		"message": insertedid,
 	})
-
 }

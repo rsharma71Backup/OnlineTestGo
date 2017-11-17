@@ -19,9 +19,8 @@ func (dao UserImpl) SaveNewUser(user models.User) (tos.Userto, error) {
 
 	log.Println("executing query and storing registration details")
 	query := "insert into registration(fname, lname, phone, email,password,usertype) values(?,?,?,?,?,?)"
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 	stmt, err := db.Prepare(query)
 	log.Println(err)
 
@@ -52,9 +51,8 @@ func (dao UserImpl) CheckUser(user models.User) (tos.Userto, error) {
 	phone := user.Phone
 	log.Println("executing query and checking user exists")
 	query := "select id from registration where phone = ?"
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 
 	rows, err := db.Query(query, phone)
 	if err != nil {
@@ -85,9 +83,8 @@ func (dao UserImpl) AuthenticateUser(user models.User) models.User {
 
 	log.Println("Executing query and authenticating user exist")
 	query := "select id, fname, lname, phone, usertype from registration where email=? and password = ?"
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 
 	rows, err := db.Query(query, user.Email, user.Password)
 

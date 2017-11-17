@@ -10,9 +10,8 @@ import (
 type TokenImpl struct{}
 
 func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeString string) error {
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 	utility.GetLogger()
 	log.Println("entering In ModifyLastAccessTime()")
 	log.Println("executing query updating lastaccesstime to currentime")
@@ -39,9 +38,8 @@ func (dao TokenImpl) ModifyLastAccessTime(currentime time.Time, tokenEncodeStrin
 func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.Time) {
 
 	utility.GetLogger()
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 	token := ""
 	lastaccesstime := ""
 	log.Println(tokenEncodeString)
@@ -65,11 +63,8 @@ func (dao TokenImpl) AunthenticateToken(tokenEncodeString string) (string, time.
 	return token, timeStamp1
 }
 func (dao TokenImpl) DeleteToken(deletetoken string) bool {
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-
-	defer conn.Close()
-
 	utility.GetLogger()
 	log.Println("entering DeleteToken() function")
 	log.Println("executing query and delete token ")

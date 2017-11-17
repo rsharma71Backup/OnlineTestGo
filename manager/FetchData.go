@@ -12,7 +12,6 @@ func FetchData() []tos.Admin {
 	log.Println("entering manager.FetchData()")
 	adminDao := daoimpl.AdminImpl{}
 	log.Println("calling adminDao.FetchData()")
-
 	return adminDao.FetchData()
 
 }

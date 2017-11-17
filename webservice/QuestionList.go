@@ -39,6 +39,5 @@ func QuestionList(c *gin.Context) {
 			"status":  "failure",
 			"message": "you dont have permission to acces",
 		})
-
 	}
 }

@@ -99,3 +99,14 @@ CREATE TABLE `registration` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-02-14 16:26:43
+
+
+
+(id int not null,uid,lastaccesstime)
+CREATE TABLE `token` (
+  `id` bigint(10) NOT NULL AUTO_INCREMENT,
+  `uid` bigint(10) DEFAULT NULL,
+  `token` varchar(60) DEFAULT NULL,
+  `lastaccesstime` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

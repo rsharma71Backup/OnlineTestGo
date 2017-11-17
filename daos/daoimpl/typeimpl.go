@@ -9,9 +9,8 @@ type TypeImpl struct{}
 
 func (dao TypeImpl) GetIdfromType(s string) int64 {
 	var id int64
-	db, conn := connectaws()
+	db := connection()
 	defer db.Close()
-	defer conn.Close()
 	err := db.QueryRow("select id from type where value=?", s).Scan(&id)
 
 	switch {
@@ -22,6 +21,5 @@ func (dao TypeImpl) GetIdfromType(s string) int64 {
 	default:
 		log.Printf("Type is %v\n", id)
 	}
-
 	return id
 }

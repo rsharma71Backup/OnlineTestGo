@@ -23,4 +23,6 @@ func Logout(c *gin.Context) {
 		"message": message,
 	})
 
+	return
+
 }

@@ -22,6 +22,5 @@ func AddQuestion(question models.Question) int64 {
 		log.Println("error occured", err)
 	}
 	log.Println(insertedid)
-
 	return insertedid
 }
