@@ -22,12 +22,12 @@ func (self *ViaSSHDialer) Dial(addr string) (net.Conn, error) {
 
 func connectaws() (*sql.DB, *ssh.Client) {
 
-	sshHost := "ec2-54-218-55-72.us-west-2.compute.amazonaws.com" // SSH Server Hostname/IP
+	sshHost := "119.81.59.59" // SSH Server Hostname/IP
 	sshPort := 22                                                 // SSH Port
-	sshUser := "risabh"                                           // SSH Username
-	sshPass := "rpqb123"                                          // Empty string for no password
+	sshUser := "risabhs"                                           // SSH Username
+	sshPass := "Rpqb$1234"                                          // Empty string for no password
 	dbUser := "onlinetestuser"                                    // DB username
-	dbPass := "Rpqb_123"                                          // DB Password
+	dbPass := "Rpqb$1234"                                          // DB Password
 	dbHost := "127.0.0.1:3306"                                    // DB Hostname/IP
 	dbName := "onlinetestdb"                                      // Database name
 
